@@ -9,3 +9,21 @@ ami = "ami-097a2df4ac947655f"
 instance_type = "t2.micro"
 vpc_security_group_ids = ["sg-0724ec2756ce2d71a"]
 }
+
+//Docker 
+terraform {
+required_providers {
+docker = {
+source = "kreuzwerker/docker"
+version = "2.13.0"
+}
+}
+}
+provider "docker" {
+version = "~> 2.7"
+host = "npipe:////.//pipe//docker_engine"
+}
+
+resource "docker_image" "ubuntu" {
+name = "ubuntu:latest"
+}
