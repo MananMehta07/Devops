@@ -7,7 +7,7 @@ region = "us-east-2"
 resource "aws_instance" "Ubantu" {
 ami = "ami-097a2df4ac947655f"
 instance_type = "t2.micro"
-vpc_security_group_ids = ["sg-0724ec2756ce2d71a"]
+vpc_security_group_ids = ["security group id"]
 }
 
 //Docker 
